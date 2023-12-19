@@ -17,4 +17,10 @@ services:
       - 'MARIADB_DATABASE=$DB_NAME'
     volumes:
       - './data:/var/lib/mysql:rw'
+    networks:
+      - mariadb_network
     restart: always
+
+networks:
+  mariadb_network:
+    external: true
